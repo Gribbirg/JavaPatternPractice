@@ -2,6 +2,7 @@ package practice2;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -52,6 +53,12 @@ public class Human {
         System.out.println("Не Ивановы:");
         humans.stream()
                 .filter((human) -> !Objects.equals(human.lastName, "Иванов"))
+                .forEach(System.out::println);
+        System.out.println();
+
+        System.out.println("Сортировка по возрасту:");
+        humans.stream()
+                .sorted(Comparator.comparingInt(human -> human.age))
                 .forEach(System.out::println);
         System.out.println();
 
