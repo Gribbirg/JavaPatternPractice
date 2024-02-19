@@ -4,6 +4,7 @@ public abstract class Creator {
     public abstract IProduct factoryMethod();
 
     public void printName() {
-        System.out.println(factoryMethod().getName());
+        IProduct product = factoryMethod();
+        System.out.println(product.getName());
     }
 }
