@@ -1,7 +1,5 @@
 package practice5;
 
-import java.util.Random;
-
 public class Singleton1 extends SingletonTest {
     private static Singleton1 instance;
 
