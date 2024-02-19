@@ -6,5 +6,4 @@ public abstract class Creator {
     public void printName() {
         System.out.println(factoryMethod().getName());
     }
-
 }
