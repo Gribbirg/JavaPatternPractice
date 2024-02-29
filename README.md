@@ -1,8 +1,12 @@
 # Java pattern practice
 
-Practice works on the discipline at RTU MIREA.
+*RTU MIREA*
+
+Practice works on the discipline.
 
 
 # Шаблоны программных платформ языка Джава
 
-Практические работы по дисциплине в РТУ МИРЭА.
+*РТУ МИРЭА*
+
+Практические работы по дисциплине.
