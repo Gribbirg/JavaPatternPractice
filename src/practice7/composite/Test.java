@@ -7,8 +7,8 @@ public class Test {
         Leaf leaf3 = new Leaf("Leaf 3");
         Leaf leaf4 = new Leaf("Leaf 4");
         Leaf leaf5 = new Leaf("Leaf 5");
-
         Composite composite = new Composite();
+
         composite.add(leaf1);
         composite.add(leaf2);
         composite.add(leaf3);
