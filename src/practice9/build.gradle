@@ -29,14 +29,14 @@ task removeJar(type: Delete) {
     delete file("$rootDir/src/main/resources/${project.name}-1.0-SNAPSHOT.jar")
 }
 
-task buildDocker(type: Exec) {
+task buildImage(type: Exec) {
     dependsOn 'jar'
-//    finalizedBy 'removeJar'
+    finalizedBy 'removeJar'
     commandLine 'docker', 'build', '-t', "${project.name}-1.0", "${rootDir}/src/main/resources/"
 }
 
 task runDocker(type: Exec) {
-    dependsOn 'buildDocker'
+    dependsOn 'buildImage'
     finalizedBy 'removeContainer'
     commandLine 'docker', 'run', '--name', "${project.name}-1.0", "${project.name}-1.0"
 }
