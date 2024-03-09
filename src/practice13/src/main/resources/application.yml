@@ -1,0 +1,5 @@
+program:
+  student:
+    name: "Алекандр"
+    last_name: "Грибков"
+    group: "ИКБО-16-22"
