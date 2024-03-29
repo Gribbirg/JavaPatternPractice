@@ -1,30 +1,28 @@
 package ru.mirea.practice15.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "authors")
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "authors")
 public class Author {
-
     @Id
-    @GeneratedValue
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id = 0L;
     @Column(name = "first_name")
     private String firstName;
-
     @Column(name = "last_name")
     private String lastName;
-
     @Column(name = "middle_name")
     private String middleName;
-
     @Column(name = "birth_date")
     private String birthDate;
 

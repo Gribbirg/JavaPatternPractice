@@ -1,21 +1,25 @@
 package ru.mirea.practice15.controllers;
 
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.mirea.practice15.models.Author;
+import ru.mirea.practice15.services.AuthorService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping(value = "/authors")
 public class AuthorController {
-    private ArrayList<Author> authors = new ArrayList<>();
+
+    private final AuthorService service;
 
     @GetMapping
     @ResponseBody
     public List<Author> getAuthors() {
-        return authors.stream().toList();
+        return service.getAllAuthors();
     }
 
     @PostMapping
@@ -23,28 +27,14 @@ public class AuthorController {
     public Author addAuthor(
             @RequestBody Author author
     ) {
-        int lenBefore = authors.size();
-        authors.add(author);
-        if (authors.size() != lenBefore)
-            return author;
-        else
-            return null;
+        service.addAuthor(author);
+        return author;
     }
 
-    @DeleteMapping
+    @Transactional
+    @DeleteMapping("/{id}")
     @ResponseBody
-    public Author deleteAuthor(
-            @RequestBody Author author
-    ) {
-        int lenBefore = authors.size();
-        authors = new ArrayList<>(
-                authors.stream()
-                        .filter((authorListItem -> !authorListItem.equals(author)))
-                        .toList()
-        );
-        if (authors.size() != lenBefore)
-            return author;
-        else
-            return null;
+    public String deleteAuthor(@PathVariable Long id) {
+        return "Count: " + service.deleteAuthorById(id);
     }
 }

@@ -1,6 +1,7 @@
 package ru.mirea.practice15.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.mirea.practice15.models.Book;
@@ -9,30 +10,30 @@ import ru.mirea.practice15.services.BookService;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping(value = "/books")
 public class BookController {
-    @Autowired
-    private BookService service;
+    private final BookService service;
 
     @GetMapping
     @ResponseBody
     public List<Book> getBooks() {
-        return service.getBooks();
+        return service.getAllBooks();
     }
 
     @PostMapping
     @ResponseBody
-    public void addBook(
+    public Book addBook(
             @RequestBody Book book
     ) {
         service.addBook(book);
+        return book;
     }
 
-    @DeleteMapping
+    @Transactional
+    @DeleteMapping("/{id}")
     @ResponseBody
-    public void deleteBook(
-            @RequestBody Long id
-    ) {
-        service.deleteBook(id);
+    public String deleteBook(@PathVariable Long id) {
+        return "Count: " + service.deleteBookById(id);
     }
 }

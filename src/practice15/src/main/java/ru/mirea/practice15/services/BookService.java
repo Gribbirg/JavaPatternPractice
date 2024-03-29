@@ -1,45 +1,28 @@
 package ru.mirea.practice15.services;
 
 import lombok.RequiredArgsConstructor;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import ru.mirea.practice15.models.Author;
 import ru.mirea.practice15.models.Book;
+import ru.mirea.practice15.repositories.AuthorRepository;
+import ru.mirea.practice15.repositories.BookRepository;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.List;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class BookService {
+    private final BookRepository repository;
 
-    @Autowired
-    private final SessionFactory sessionFactory;
-    private Session session;
-
-    @PostConstruct
-    void init() {
-        session = sessionFactory.openSession();
-    }
-
-    @PreDestroy
-    void close() {
-        session.close();
-    }
-
-    public List<Book> getBooks() {
-        return session.createQuery("SELECT b FROM Book b", Book.class).getResultList();
+    public List<Book> getAllBooks() {
+        return repository.getAllBy().orElseThrow();
     }
 
     public void addBook(Book book) {
-        var transaction = session.beginTransaction();
-        session.saveOrUpdate(book);
-        transaction.commit();
+        repository.save(book);
     }
 
-    public void deleteBook(Long id) {
-        session.createQuery("DELETE FROM Book WHERE id=:" + id);
+    public Integer deleteBookById(Long id) {
+        return repository.deleteBookById(id).orElseThrow();
     }
 }

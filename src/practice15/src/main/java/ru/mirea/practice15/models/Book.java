@@ -1,40 +1,28 @@
 package ru.mirea.practice15.models;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "books")
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "books")
 public class Book {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "name")
     private String name;
-
     @Column(name = "creation_date")
     private String creationDate;
-
-    public Book(Long id, String name, String creationDate) {
-        this.id = id;
-        this.name = name;
-        this.creationDate = creationDate;
-    }
-
-    public Book() {}
-
-    public Book(String name, String creationDate) {
-        this.name = name;
-        this.creationDate = creationDate;
-    }
 
     @Override
     public String toString() {
