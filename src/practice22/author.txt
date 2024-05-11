@@ -1,0 +1,14 @@
+AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=2, firstName='Александр', lastName='Пушкин', middleName='Сергеевич', birthDate='6.6.1799'}
+AuthorDto{id=3, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=4, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=5, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=6, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=7, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=8, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=9, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=10, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=11, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=12, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=13, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
+AuthorDto{id=14, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}
