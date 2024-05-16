@@ -25,7 +25,6 @@ public class SecurityConfig {
                         auth
                                 .requestMatchers("/login/**").permitAll()
                                 .requestMatchers("/home").authenticated()
-//                                .anyRequest().authenticated()
                 )
                 .formLogin(AbstractAuthenticationFilterConfigurer::permitAll);
         return http.build();

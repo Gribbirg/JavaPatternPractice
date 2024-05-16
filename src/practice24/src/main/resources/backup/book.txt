@@ -1,5 +1,0 @@
-BookDto{id=10, name='Book1', creationDate='1.1.2000', author=AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}}
-BookDto{id=11, name='Book1', creationDate='1.1.2000', author=AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}}
-BookDto{id=12, name='Book1', creationDate='1.1.2000', author=AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}}
-BookDto{id=14, name='Book1', creationDate='1.1.2000', author=AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}}
-BookDto{id=15, name='Book1', creationDate='1.1.2000', author=AuthorDto{id=1, firstName='Александр', lastName='Грибоедов', middleName='Сергеевич', birthDate='6.6.1802'}}
